@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Dynamique</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div class="container">
+        <button id="btnContact" class="button">Formulaire de Contact</button>
+        <button id="btnVideo" class="button">Vidéo de Présentation</button>
+        <button id="btnPhotos" class="button">Photos</button>
+        <button id="btnCV" class="button">CV</button>
+
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                
+                <span class="close">&times;</span>
+                <h2>Formulaire de Contact</h2>
+                <form >
+                    <label for="name">Nom  : </label>
+                    <input type="text" id="name" name="name" required> <br>
+
+                    <label for="prenom">Nom  : </label>
+                    <input type="text" id="name" name="prenome" required> <br>
+
+                    <label for="email">Email : </label>
+                    <input type="email" id="email" name="email" required> <br>
+                    
+                    <label for="message">Message : </label> 
+                    <textarea id="message" name="message" required></textarea><br>
+                    
+                    <button type="submit"> Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="videoSection" class="section">
+           
+            <h2>Vidéo de Présentation</h2>
+            <iframe width="560" height="315" src="VA.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div id="photosSection" class="section">
+           
+            <h2>Photos</h2>
+            <img src="ahmed.jpg" alt="ahmed" width="230" height="300">
+            <img src="maria.jpg" alt="maria" width="230" height="300" >
+            <img src="simo.jpg" alt="simo" width="230" height="300">
+
+        </div>
+
+        <div id="cvSection" class="section">
+            
+             <h2>CV</h2>
+             <div class="container">
+                <header>
+                    <h1>Mouzayane Ahmed</h1>
+                    <p>Tel : (514) 557-8799</p>
+                    <p>Courriel : ahmedmouzeyane0@gmail.com</p>
+                </header>
+        
+                <section class="experience">
+                    <h2>Expérience de travail</h2>
+                    <p><strong>Préposée au service à la clientèle</strong></p>
+                    <p><em>Cybercafé Amistad Montréal - Sep. 2023 à aujourd'hui</em></p>
+                    <ul>
+                        <li>Service à la clientèle</li>
+                        <li>Assistant technique (navigation sur internet, impression, photocopies, fax, scan...)</li>
+                    </ul>
+        
+                    <p><strong>Commis d’entrepôt</strong></p>
+                    <p><em>Entrepôts Fruigor - Nov. 2023 à aujourd'hui</em></p>
+                    <ul>
+                        <li>Déposer des caisses de fruits</li>
+                        <li>Vérifier la qualité des fruits</li>
+                    </ul>
+        
+                    <p><strong>Service à la clientèle</strong></p>
+                    <p><em>Inwi - 2017 à 2018</em></p>
+                    <ul>
+                        <li>Accompagner les clients</li>
+                        <li>Gestion des clients</li>
+                    </ul>
+        
+                    <p><strong>CHANTIERS SOCIAUX MAROCAINS - Membre associatif actif encadrement d'environnement</strong></p>
+                    <p><em>Gestion des bénévoles étrangers sur les sites de nettoyage, Organisation d'activités environnementales pour les jeunes de la communauté.</em></p>
+                </section>
+        
+                <section class="skills">
+                    <h2>Atouts</h2>
+                    <ul>
+                        <li>Bonne vue d’ensemble et capable de prévision</li>
+                        <li>Habileté à collaborer</li>
+                        <li>Capacité d’initiative</li>
+                        <li>Attitude positive</li>
+                    </ul>
+                </section>
+        
+                <section class="education">
+                    <h2>Formation</h2>
+                    <p><strong>Attestation d’études collégiales (AEC) - En cours</strong></p>
+                    <ul>
+                        <li>Programmation web et mobile</li>
+                        <li>Informatique de gestion</li>
+                    </ul>
+        
+                    <p><strong>Développement Informatique Groupe MAIGE – Rabat, Maroc - 2021 à 2023</strong></p>
+                    <p><strong>2ème année technicien spécialisé</strong></p>
+        
+                    <p><strong>Diplôme d’études secondaire Fakih Mohamed El Mrini - 2016 à 2017</strong></p>
+                </section>
+        
+                <section class="interests">
+                    <h2>Intérêts et Loisirs</h2>
+                    <ul>
+                        <li>Boxing, échecs et jouer au soccer</li>
+                        <li>Apprendre de nouveaux langages de programmation</li>
+                    </ul>
+                </section>
+        
+                <section class="languages">
+                    <h2>Langues</h2>
+                    <ul>
+                        <li>Anglais (Très bonne)</li>
+                        <li>Français (Bonne notion)</li>
+                    </ul>
+                </section>
+            </div>
+
+            
+            <a href="cvAh-las.pdf" target="_blank">Télécharger le CV pdf
+
+            </a>
+          
+        </div>
+    </div>
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+       
+        const contactModal = document.getElementById('contactModal');
+        const videoSection = document.getElementById('videoSection');
+        const photosSection = document.getElementById('photosSection');
+        const cvSection = document.getElementById('cvSection');
+        const sections = document.querySelectorAll('.section');
+        const contactBtn = document.getElementById('btnContact');
+        const videoBtn = document.getElementById('btnVideo');
+        const photosBtn = document.getElementById('btnPhotos');
+        const cvBtn = document.getElementById('btnCV');
+    
+       
+        function hideAllSections() {
+            sections.forEach(section => {
+                section.classList.remove('show');
+            });
+        }
+    
+       
+        contactBtn.addEventListener('click', function () {
+            hideAllSections();
+            contactModal.style.display = 'block';
+        });
+    
+        
+        document.getElementsByClassName('close')[0].addEventListener('click', function () {
+            contactModal.style.display = 'none';
+        });
+    
+        
+        videoBtn.addEventListener('click', function () {
+            hideAllSections();
+            videoSection.classList.add('show');
+        });
+    
+       
+        photosBtn.addEventListener('click', function () {
+            hideAllSections();
+            photosSection.classList.add('show');
+        });
+    
+       
+        cvBtn.addEventListener('click', function () {
+            hideAllSections();
+            cvSection.classList.add('show');
+        });
+    });
+    </script>
+</body>
+</html>
